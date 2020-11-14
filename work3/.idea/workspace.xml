@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="201ec29b-e111-47f9-b746-84c1c8941acc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lv0.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lv1.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lv2.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lv3.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="201ec29b-e111-47f9-b746-84c1c8941acc" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

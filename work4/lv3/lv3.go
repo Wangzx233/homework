@@ -1,15 +1,12 @@
 package main
 
 import (
-	"crypto/aes"
-	"crypto/cipher"
-	"encoding/hex"
 	"encoding/json"
 	"fmt"
+	//"encoding/json"
 	"io/ioutil"
 	"os"
 )
-
 type Person struct {
 	Id string
 	Mm string
@@ -18,12 +15,9 @@ func main() {
 	var qr int
 	var zh,mm string
 	Allperson := make(map[string]Person)
-	nonce:="wzxnb"
-	key:="wzx"
-	fp, _ := os.OpenFile("user1.json",os.O_RDWR|os.O_APPEND,0644)
+	fp, _ := os.OpenFile("user.json",os.O_RDWR|os.O_APPEND,0644)
 	defer fp.Close()
 	bytes, _ := ioutil.ReadAll(fp)
-	deal(string(bytes),key,nonce)
 	json.Unmarshal(bytes, &Allperson)
 	for {
 		fmt.Println("登录输入1，注册输入2，退出输入3")
@@ -53,8 +47,7 @@ func main() {
 				os.Truncate("user.json",0)
 				fp.Seek(0,0)
 				h,_:=json.Marshal(Allperson)
-				g:=add(string(h),key,nonce)
-				fp.WriteString(g)
+				fp.WriteString(string(h))
 				fmt.Println("成功注册")
 				break
 			}
@@ -95,43 +88,4 @@ func dl(mp map[string]Person)int{
 	}
 	fmt.Println("登录成功")
 	return 2
-}
-func add(src, k, n string)string {
-	// The key argument should be the AES key, either 16 or 32 bytes
-	// to select AES-128 or AES-256.
-	key := []byte(k)
-	plaintext := []byte(src)
-
-	block, err := aes.NewCipher(key)
-	if err != nil {
-		panic(err.Error())
-	}
-
-	nonce, _ := hex.DecodeString(n)
-
-	aesgcm, err := cipher.NewGCM(block)
-	if err != nil {
-		panic(err.Error())
-	}
-
-	ciphertext := aesgcm.Seal(nil, nonce, plaintext, nil)
-
-	return fmt.Sprintf("%x", ciphertext)
-}
-
-func deal(src, k, n string) string {
-	// The key argument should be the AES key, either 16 or 32 bytes
-	// to select AES-128 or AES-256.
-	key := []byte(k)
-	ciphertext, _ := hex.DecodeString(src)
-
-	nonce, _ := hex.DecodeString(n)
-
-	block, _ := aes.NewCipher(key)
-	aesgcm, _ := cipher.NewGCM(block)
-
-	plaintext, _ := aesgcm.Open(nil, nonce, ciphertext, nil)
-
-
-	return string(plaintext)
 }

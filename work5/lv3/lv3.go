@@ -18,7 +18,7 @@ func main() {
 	r.POST("/login", func(context *gin.Context) {
 		var person Person
 		context.ShouldBind(&person)
-
+		fmt.Println(person)
 		//读取存储账号密码的文件
 		Allperson := make(map[string]Person)
 		fp, _ := os.OpenFile("person.json",os.O_RDWR|os.O_APPEND,0644)
@@ -163,6 +163,7 @@ func Dl(zh string,mm string,mp map[string]Person)int{
 }
 func state() gin.HandlerFunc{
 	return func(context *gin.Context) {
+		context.Next()
 		context.Next()
 		cookie,err:=context.Request.Cookie("user_cookie")
 		if err==nil{

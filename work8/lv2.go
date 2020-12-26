@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gin-gonic/gin"
+)
+
 
 func main() {
-	fmt.Println("hello,world")
+	r:=gin.Default()
+	r.GET("/hello", func(context *gin.Context) {
+		context.Writer.Write([]byte("Hello,world"))
+	})
+	r.Run()
 }

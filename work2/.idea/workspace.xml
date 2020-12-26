@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c82a364-cfc2-4e7f-86ae-1e71ac0befdc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../work0/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work0/第0次-lv5-王鑫-2020215058.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lv4/lv4.go" beforeDir="false" afterPath="$PROJECT_DIR$/lv4/lv4.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/lv2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -50,34 +58,7 @@
       <recent name="D:\GoProjects\src\work2\lvo" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build lv4solve.go">
-    <configuration name="go build lv3.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
-      <module name="work2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/lv3.go" />
-      <package value="work2" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build lv3.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="work2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/lv1+lv3/lv3.go" />
-      <package value="work2" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build lv4.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="work2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/lv4.go" />
-      <package value="work2" />
-      <directory value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build main.go">
     <configuration name="go build lv4solve.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="work2" />
       <working_directory value="$PROJECT_DIR$" />
@@ -87,11 +68,11 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build work2" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="work2" />
       <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/lv1.go" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/lvEx/main.go" />
       <package value="work2" />
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
@@ -114,6 +95,24 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="go build work2/demo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="work2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/demo/demo.go" />
+      <package value="work2/demo" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build work2/lv3" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="work2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/lv3/lv3.go" />
+      <package value="work2/lv3" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build work2/lv4" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="work2" />
       <working_directory value="$PROJECT_DIR$" />
@@ -125,18 +124,19 @@
     </configuration>
     <list>
       <item itemvalue="Go Build.go build work2" />
-      <item itemvalue="Go Build.go build lv3.go" />
-      <item itemvalue="Go Build.go build lv4.go" />
       <item itemvalue="Go Build.go build work2/lv4" />
       <item itemvalue="Go Build.go build lv4solve.go" />
+      <item itemvalue="Go Build.go build work2/lv3" />
+      <item itemvalue="Go Build.go build main.go" />
+      <item itemvalue="Go Build.go build work2/demo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build lv4solve.go" />
-        <item itemvalue="Go Build.go build work2" />
+        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build work2/demo" />
         <item itemvalue="Go Build.go build work2/lv4" />
-        <item itemvalue="Go Build.go build lv4.go" />
-        <item itemvalue="Go Build.go build lv3.go" />
+        <item itemvalue="Go Build.go build work2/lv3" />
+        <item itemvalue="Go Build.go build lv4solve.go" />
       </list>
     </recent_temporary>
   </component>
@@ -144,26 +144,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="182" y="80" width="1089" height="744" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604109353998">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="182" y="80" width="1089" height="744" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1604109353998" />
-    <state width="1493" height="279" key="GridCell.Tab.0.bottom" timestamp="1604536090306">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1604536090306" />
-    <state width="1493" height="279" key="GridCell.Tab.0.center" timestamp="1604536090306">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1604536090306" />
-    <state width="1493" height="279" key="GridCell.Tab.0.left" timestamp="1604536090306">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1604536090306" />
-    <state width="1493" height="279" key="GridCell.Tab.0.right" timestamp="1604536090306">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="279" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1604536090306" />
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
 </project>

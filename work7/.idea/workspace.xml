@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72aaec7d-7cc7-43c2-989a-7cf21a255514" name="Default Changelist" comment="" />
+    <list default="true" id="72aaec7d-7cc7-43c2-989a-7cf21a255514" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../work0/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work0/第0次-lv5-王鑫-2020215058.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work2/lv4/lv4.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/lv4/lv4.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/lv2.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -14,7 +14,7 @@ func main() {
 }
 func p1(ch chan string){
 	for i:=1;i<=100;i++ {
-		ch<-"❤峰峰❤"
+		ch<-"123"
 		if i%2==1  {
 			fmt.Println("p1:", i)
 		}

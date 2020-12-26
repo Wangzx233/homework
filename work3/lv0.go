@@ -18,7 +18,7 @@ func factorial(n int,ch chan string) {
 	}
 
 	myres[n] = res
-	ch<-"❤峰峰❤"
+	ch<-"123"
 }
 
 func main() {

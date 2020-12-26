@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6367d772-7e4a-4747-9ea2-838f2128eb8b" name="Default Changelist" comment="" />
+    <list default="true" id="6367d772-7e4a-4747-9ea2-838f2128eb8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/第0次-lv5-王鑫-2020215058.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work8/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/lv2.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,10 +23,14 @@
     </option>
   </component>
   <component name="GOROOT" path="D:\go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1igExh2LK054fx6slMsM8OXeEcs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -100,47 +111,5 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="447" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602328661353">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="447" y="0" width="1089" height="824" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1602328661353" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603872422089">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603872422089" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1602751505847">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602751505847" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1602751505846">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602751505846" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1602751505846">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602751505846" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1602751505847">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602751505847" />
-    <state x="270" y="56" key="SettingsEditor" timestamp="1602577961370">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="270" y="56" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1602577961370" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1602577724421">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1602577724421" />
-    <state x="544" y="272" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1602321815388">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="544" y="272" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1536.824@0.0.1536.824" timestamp="1602321815388" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1602577879580">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1602577879580" />
   </component>
 </project>

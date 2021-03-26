@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23a1eedd-ac78-45a1-8527-99ceb6faf86f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/sql_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/struct.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Model/user_act.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work3/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../work3/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work3/lv1.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work3/lv1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/query.go" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/query.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Router/entrance.go" beforeDir="false" afterPath="$PROJECT_DIR$/Router/entrance.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/接口.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

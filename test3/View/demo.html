@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>22</title>>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(a,b) in arr" :title="a">
+                    {{ a }} {{ b }}
+                </li>
+            </ul>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            var app = new Vue({
+                el:"#app",
+                data:{
+                    arr:[1,2,3,4,5]
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+

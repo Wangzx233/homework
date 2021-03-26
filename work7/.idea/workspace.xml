@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72aaec7d-7cc7-43c2-989a-7cf21a255514" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../work0/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work0/第0次-lv5-王鑫-2020215058.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work2/lv4/lv4.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/lv4/lv4.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demo/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/../demo/demo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/Controller/query.go" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/Controller/query.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/Router/entrance.go" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/Router/entrance.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/接口.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work2/lv2/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/lv2/lv2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/lv2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/lv2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +45,7 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../work6" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />

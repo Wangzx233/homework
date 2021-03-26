@@ -12,6 +12,6 @@ func Entrance() {
 	router.PUT("/transfer",Controller.Auth(),Controller.Transfer)
 	router.GET("/queryremarks",Controller.QueryRemarks)
 	router.GET("/queryUid",Controller.Auth(),Controller.QueryUid)
-
+	router.GET("/help",Controller.Help)
 	router.Run(":8080")
 }

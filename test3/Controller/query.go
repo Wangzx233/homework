@@ -28,3 +28,14 @@ func QueryUid(context *gin.Context)  {
 	re:=Model.QueryUid(uid)
 	context.JSON(200,re)
 }
+
+func Help(context *gin.Context)  {
+	context.JSON(200,gin.H{
+		"注册账号":"POST /register    用户名：uid   密码：password",
+		"登录账号":"GET /login        用户名：uid   密码：password",
+		"给自己充值":"PUT /Recharge   金额：money   备注：remarks",
+		"转账":"PUT	/transfer       金额：money   对象：toUid	备注：remarks",
+		"根据备注查询转账记录":"GET /queryremarks    查询关键字:remarks",
+		"查询自己转账记录":"GET /queryUid",
+	})
+}

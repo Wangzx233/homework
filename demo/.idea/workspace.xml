@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99494a0e-a733-4403-999f-559b85078c8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../work0/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work0/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work0/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work0/第0次-lv5-王鑫-2020215058.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/lv2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../work8/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work8/lv2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/demo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/Controller/query.go" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/Controller/query.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/Router/entrance.go" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/Router/entrance.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test3/接口.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../test3/接口.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work2/lv2/lv2.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work2/lv2/lv2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +41,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Go Build.go build demo.go">
+  <component name="RunManager" selected="Go Build.go build demo">
     <configuration name="go build demo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -63,13 +71,16 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build demo.go" />
         <item itemvalue="Go Build.go build demo" />
+        <item itemvalue="Go Build.go build demo.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
 </project>

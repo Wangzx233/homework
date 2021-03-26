@@ -2,28 +2,31 @@ package main
 
 import "fmt"
 
-type animal interface {
-	growl()
-}
-type dog struct {
-
-}
-
-type cat struct {
-
-}
-func (dog dog) growl()  {
-	fmt.Println("wang")
-}
-func (cat cat) growl()  {
-	fmt.Println("miao")
-}
 func main() {
-	var animal animal
+	//var a [99]int
+	//
+	//for i:=0;i<len(a);i++{
+	//	a[i]=i
+	//}
+	//fmt.Println(a)
+	nums := []int{2,7,11,15}
+	target := 9
+	fmt.Println(twoSum(nums,target))
+}
+func twoSum(nums []int, target int) []int {
+	a:=make([]int,2)
+	m:=make(map[int]int)
 
-	animal=new(dog)
-	animal.growl()
-
-	animal=new(cat)
-	animal.growl()
+	fmt.Println(len(nums))
+	for i:=0;i<len(nums);i++{
+		another_num:=target-nums[i]
+		val,b:=m[another_num]
+		if b{
+			a[0]=val
+			a[1]=i
+			return a
+		}
+		m[nums[i]]=i
+	}
+	return a
 }

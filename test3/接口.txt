@@ -6,10 +6,10 @@
 	密码：password
 给自己充值：
 	金额：money
-	备注：remarks
 转账：
 	金额：money
 	对象：toUid
+	备注：remarks
 根据备注查询:
 	查询关键字:remarks
 查询自己转账：

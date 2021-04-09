@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room</title>
+</head>
+
+<body>
+    <input placeholder="输入你的内容" id="content">
+    <button>发送请求</button>
+
+    <!-- 显示结果 -->
+    <div></div>
+
+    <script>
+        var ctt = document.querySelector('#content');
+        var button = document.querySelector('button');
+        var div = document.querySelector('div');
+        //获取url中"?"符后的字串
+        var keyword = GetRequest();
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+
+        var socket = new WebSocket("ws://127.0.0.1:8080/ws");
+        socket.addEventListener("open", function () {
+            div.innerHTML = '连接成功了';
+            var data = {
+                "user": keyword.uid,
+                "type": "login",
+                "content": "",
+                "room_id":keyword.room_id
+            }
+            console.log(data)
+            socket.send(JSON.stringify(data));
+        })
+
+        //发消息
+        button.addEventListener('click', function () {
+            var value = ctt.value;
+            var data = {
+                "user": keyword.uid,
+                "type": 'broad',
+                "content": value,
+                "room_id":keyword.room_id
+            };
+            socket.send(JSON.stringify(data));
+        })
+
+        //接收消息
+        socket.addEventListener('message', function (ct) {
+            console.log(ct);
+            // var cnt = JSON.parse(ct);
+            div.innerHTML = div.innerHTML+'<br/>'+ct.data
+        });
+
+        //断开时
+        socket.addEventListener('close', function () {
+            var data = {
+                "user": keyword.uid,
+                "type": 'logout',
+                "content": "",
+                "room_id":keyword.room_id
+            };
+            socket.send(JSON.stringify(data));
+            div.innerHTML = '服务已断开';
+        });
+    </script>
+</body>
+
+</html>

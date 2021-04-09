@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入房间号" id="room_id">
+    
+
+    <button onclick=websocket()>进入房间</button>
+    
+
+    <script>
+        var room_id = document.querySelector('#room_id');
+        
+        var button = document.querySelector('button');
+        
+        
+
+        // isLogin = new XMLHttpRequest();
+        //         isLogin.onload = function() {
+        //             var a = isLogin.responseText;
+        //             var b = JSON.parse(a);
+        //             div.innerHTML = b.message
+        //         }
+        //         isLogin.open('get', 'http://127.0.0.1:8080/user/isLogin', true);
+        //         isLogin.send();
+
+        //获取url中"?"符后的字串
+        var keyword = GetRequest();
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        //websocket
+        function websocket() {
+            window.location.href = "room.html?room_id=" + room_id.value+"&uid="+keyword.uid
+        }
+
+    </script>
+</body>
+
+</html>

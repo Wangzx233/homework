@@ -7,9 +7,12 @@ import (
 func Auth() gin.HandlerFunc {
 	return func(context *gin.Context) {
 		s := sessions.Default(context)
+
+
 		if s.Get("uid")!=""{
 			context.Next()
 		}
+
 		_, err := context.Request.Cookie("uid")
 		if err == nil {
 			context.Next()

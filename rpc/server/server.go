@@ -4,6 +4,9 @@ import (
 	"fmt"
 	"github.com/MashiroC/begonia"
 	"github.com/MashiroC/begonia/app/option"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
+	"log"
 )
 
 func main() {
@@ -52,3 +55,23 @@ func (*UserCenter) ChangePassword(username string, newPassword string) error {
 	}
 	return nil
 }
+
+var DB *gorm.DB
+
+const (
+	dns = "root:root@tcp(127.0.0.1:3306)/data1?charset=utf8mb4&parseTime=True&loc=Local"
+)
+func SqlInit() {
+	db, err := gorm.Open(mysql.Open(dns),&gorm.Config{})
+	//db = db.Debug()
+	if err != nil {
+		log.Panicln(err)
+		return
+	}
+	if db.AutoMigrate(&User{}) != nil {
+		log.Println(err)
+		return
+	}
+	DB = db
+}
+

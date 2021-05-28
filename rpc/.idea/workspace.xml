@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8326939-3986-4ebf-bddc-b7c96813a24f" name="Default Changelist" comment="" />
+    <list default="true" id="b8326939-3986-4ebf-bddc-b7c96813a24f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../MQ/LV1/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../winter" beforeDir="false" afterPath="$PROJECT_DIR$/../winter" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../software/go" />
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -33,7 +37,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../winter" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MQ" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -49,7 +54,7 @@
       <recent name="C:\Users\admin\OneDrive\GoProjects\src\rpc\client" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build rpc/server">
+  <component name="RunManager" selected="Go Build.go build rpc/client">
     <configuration name="go build rpc" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rpc" />
       <working_directory value="$PROJECT_DIR$" />
@@ -79,8 +84,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build rpc/server" />
         <item itemvalue="Go Build.go build rpc/client" />
+        <item itemvalue="Go Build.go build rpc/server" />
         <item itemvalue="Go Build.go build rpc" />
       </list>
     </recent_temporary>

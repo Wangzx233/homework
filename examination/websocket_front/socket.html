@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入房间号" id="room_id">
+    
+
+    <button  id="inter">进入房间</button>
+    <button  id="create">创建房间</button>
+    
+
+    <script>
+        var roomID = document.querySelector('#room_id');
+        
+        var inter = document.querySelector('#inter');
+        var create = document.querySelector('#create');
+        
+
+        // isLogin = new XMLHttpRequest();
+        //         isLogin.onload = function() {
+        //             var a = isLogin.responseText;
+        //             var b = JSON.parse(a);
+        //             div.innerHTML = b.message
+        //         }
+        //         isLogin.open('get', 'http://47.106.170.23:8080/user/isLogin', true);
+        //         isLogin.send();
+
+        //获取url中"?"符后的字串
+        var keyword = GetRequest();
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+        //websocket
+        inter.addEventListener('click',function inter() {
+            re = new XMLHttpRequest();
+            
+            re.onload = function () {
+                var a = re.responseText;
+                var d = JSON.parse(a);
+                //var r = eval("(" + a + ")")
+                window.alert(d.message);
+                if(d.code==200){
+                    window.location.href = "room.html?room_id=" + roomID.value+"&uid="+keyword.uid+"&type=login"
+                }
+            }
+            re.open('post', 'http://47.106.170.23:8080/cheek_inter',true);
+            re.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+            re.send("room_id="+roomID.value);
+        // var socket = new WebSocket("ws://47.106.170.23:8080/ws?uid="+keyword.uid);
+        // socket.addEventListener("open", function () {
+        //     // div.innerHTML = '连接成功了';
+        //     var data = {
+        //         "user": keyword.uid,
+        //         "type": "login",
+        //         "content": "",
+        //         "room_id":roomID.value
+        //     }
+        //     socket.send(JSON.stringify(data));
+        // })
+        // //接收消息
+        // socket.addEventListener('message', function (ct) {
+        //     console.log(ct.data);
+        //     alert(ct)
+        //     // var cnt = JSON.parse(ct);
+        //    // div.innerHTML = div.innerHTML+'<br/>'+ct.data
+           
+        //    var d =JSON.parse(ct.data)
+        //     alert(d.content)
+        //     // var cnt = JSON.parse(ct);
+        //     //div.innerHTML = div.innerHTML+'<br/>'+ct.data
+        //     console.log(d.room_id,roomID.value)
+        //     if(d.room_id==roomID.value)
+        //     {
+        //         window.location.href = "room.html?room_id=" + roomID.value+"&uid="+keyword.uid
+        //     }
+        // });
+        // //断开时
+        // socket.addEventListener('close', function () {
+        //     var data = {
+        //         "user": keyword.uid,
+        //         "type": 'logout',
+        //         "content": "",
+        //         "room_id":roomID.value
+        //     };
+        //     socket.send(JSON.stringify(data));
+        //     div.innerHTML = '服务已断开';
+        // });
+        })
+
+
+        create.addEventListener('click',function create() {
+            re = new XMLHttpRequest();
+            
+            re.onload = function () {
+                var a = re.responseText;
+                var d = JSON.parse(a);
+                //var r = eval("(" + a + ")")
+                window.alert(d.message);
+                if(d.code==200){
+                    window.location.href = "room.html?room_id=" + roomID.value+"&uid="+keyword.uid+"&type=create"
+                }
+            }
+            re.open('post', 'http://47.106.170.23:8080/cheek_create',true);
+            re.setRequestHeader("Content-type","application/x-www-form-urlencoded")
+            re.send("room_id="+roomID.value);
+        // var socket = new WebSocket("ws://47.106.170.23:8080/ws");
+        // socket.addEventListener("open", function () {
+        //     // div.innerHTML = '连接成功了';
+        //     var data = {
+        //         "user": keyword.uid,
+        //         "type": "create",
+        //         "content": "",
+        //         "room_id":roomID.value
+        //     }
+        //     console.log(data)
+        //     socket.send(JSON.stringify(data));
+        // })
+        // //接收消息
+        // socket.addEventListener('message', function (ct) {
+            
+        //     // var d = eval(ct);
+        //     // var room_id ="room_id"
+        //     // console.log(d.data);
+        //     // console.log(roomID.value)
+            
+        //     var d =JSON.parse(ct.data)
+        //     alert(d.content)
+           
+        //     // var cnt = JSON.parse(ct);
+        //     //div.innerHTML = div.innerHTML+'<br/>'+ct.data
+        //     if(d.room_id==roomID.value)
+        //     {
+        //         window.location.href = "room.html?room_id=" + roomID.value+"&uid="+keyword.uid
+        //     }
+        // });
+        // //断开时
+        // socket.addEventListener('close', function () {
+        //     var data = {
+        //         "user": keyword.uid,
+        //         "type": 'logout',
+        //         "content": "",
+        //         "room_id":roomID.value
+        //     };
+        //     socket.send(JSON.stringify(data));
+        //     div.innerHTML = '服务已断开';
+        // });
+        })
+
+        
+        
+    </script>
+</body>
+
+</html>

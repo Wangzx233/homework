@@ -6,12 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>room</title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" href="./layout.css">
 </head>
 
 <body>
     <input placeholder="输入你的内容" id="content">
     <button>发送请求</button>
 
+    <div id="result"></div>
+    <canvas id="chess"></canvas>
+    <div id="operate">
+        <span id="restart" class="restart">重新开始</span>
+        <span id="goback" class="goback unable">悔棋</span>
+        <span id="regret" class="regret unable">撤销悔棋</span>
+    </div>
+	<script src='./index.js'></script>
     <!-- 显示结果 -->
     <div></div>
 

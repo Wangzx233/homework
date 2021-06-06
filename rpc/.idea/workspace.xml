@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8326939-3986-4ebf-bddc-b7c96813a24f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../MQ/LV1/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../winter" beforeDir="false" afterPath="$PROJECT_DIR$/../winter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work13/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../work13/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work13/socket/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/../work13/socket/reader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../work13/websocket_front/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/../work13/websocket_front/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

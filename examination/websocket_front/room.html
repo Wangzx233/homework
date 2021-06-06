@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>room</title>
+    <link rel="stylesheet" type="text/css" href="../common.css">
+    <link rel="stylesheet" href="./layout.css">
+</head>
+
+<body>
+    <input placeholder="输入你的内容" id="content">
+    <button id="send">发送消息</button>
+    <input type="checkbox" id="ready">
+    <p id="ready_text">准备</p>
+    <div id="chat_room"></div>
+    <div id="result"></div>
+    <div id="game" style="display: none;height: auto;width: auto;">
+        <canvas id="chess"></canvas>
+        <div id="operate">
+            
+            <!-- <span id="goback" class="goback unable">悔棋</span>
+            <span id="regret" class="regret unable">撤销悔棋</span> -->
+        </div>
+    </div>
+
+
+    <script>
+        var ctt = document.querySelector('#content');
+        var button = document.querySelector('#send');
+        var div = document.querySelector('#chat_room');
+        var isready = document.querySelector('#ready');
+        var ready_text = document.querySelector('#ready_text');
+        var game = document.querySelector('#game');
+        var res = document.querySelector('#result');
+        //获取url中"?"符后的字串
+        var keyword = GetRequest();
+        function GetRequest() {
+            var url = location.search;
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for (var i = 0; i < strs.length; i++) {
+                    theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+
+
+        var socket = new WebSocket("ws://47.106.170.23:8080/ws?room_id=" + keyword.room_id + "&uid=" + keyword.uid);
+        socket.addEventListener("open", function () {
+            div.innerHTML = '连接成功了';
+            var data = {
+                "user": keyword.uid,
+                "type": keyword.type,
+                "content": "",
+                "room_id": keyword.room_id
+            }
+            console.log(data)
+            socket.send(JSON.stringify(data));
+        })
+
+        //发消息
+        button.addEventListener('click', function () {
+            var value = ctt.value;
+            var data = {
+                "user": keyword.uid,
+                "type": 'broad',
+                "content": value,
+                "room_id": keyword.room_id
+            };
+            socket.send(JSON.stringify(data));
+        })
+
+        var NowPlayer = "1"
+        //接收消息
+        socket.addEventListener('message', function (ct) {
+            console.log(ct);
+            var cnt = JSON.parse(ct.data);
+            if (cnt.type == "gameStart") {
+                game.style = "display: block;"
+                NowPlayer = cnt.user
+                if(cnt.user=="1"){
+                        result.innerHTML="你是黑棋"
+                    }else{
+                        result.innerHTML="你是白旗"
+                    }
+            }else{
+                if(cnt.type=="game_over"){
+                    game.style = "display: none;"
+                    if(cnt.user=="1"){
+                        result.innerHTML="黑棋获胜"
+                    }else{
+                        result.innerHTML="白棋获胜"
+                    }
+                    
+                }
+                
+            }
+            if(cnt.type=="message"){
+                div.innerHTML = div.innerHTML + '<br/>' +cnt.user +" :  "+ cnt.content
+            }
+            
+        });
+
+        //断开时
+        socket.addEventListener('close', function () {
+            var data = {
+                "user": keyword.uid,
+                "type": 'logout',
+                "content": "",
+                "room_id": keyword.room_id
+            };
+            socket.send(JSON.stringify(data));
+            div.innerHTML = '服务已断开';
+        });
+
+        isready.onclick = function () {
+            if (isready.checked == true) {
+                var data = {
+                    "user": keyword.uid,
+                    "type": "ready",
+                    "content": "",
+                    "room_id": keyword.room_id
+                };
+                socket.send(JSON.stringify(data));
+                ready_text.innerHTML = "取消准备"
+            } else {
+                var data = {
+                    "user": keyword.uid,
+                    "type": "unready",
+                    "content": "",
+                    "room_id": keyword.room_id
+                };
+                socket.send(JSON.stringify(data));
+                ready_text.innerHTML = "准备"
+            }
+        }
+        class Gobang {
+            constructor(options) {
+                this.options = options;
+                // 获取棋盘 
+                this.chessboard = document.getElementById(options.canvas || 'chess');
+                // 获取结果
+                this.result = document.getElementById('result');
+
+                // 初始化
+                this.init();
+                // 棋盘元素
+                this.lattice = {
+                    width: options.gobangStyle.padding,
+                    height: options.gobangStyle.padding
+                };
+            }
+            初始化
+            init() {
+                const { options } = this;
+                // 角色 ，1黑色棋子 2白色棋子
+                this.role = options.role || 1;
+                // 是否已经分出了胜负
+                this.win = false;
+                // 走棋的记录
+                this.history = [];
+                // 当前步
+                this.currentStep = 0;
+                // 结果提示信息
+                this.result.innerText = "";
+                // 画出棋盘
+                this.drawChessBoard();
+                // 落子
+                this.listenDownChessman();
+                //  初始棋盘矩阵
+                this.initChessboardMatrix();
+            }
+
+            // 画出棋盘
+            drawChessBoard() {
+                const { options } = this;
+                const context = this.chessboard.getContext('2d');
+                const { count, padding, borderColor } = options.gobangStyle;
+                this.chessboard.width = this.chessboard.height = padding * count;
+                context.strokeStyle = borderColor;
+                context.lineWidth = 2;
+
+                for (var i = 0; i < count; i++) {
+                    context.moveTo(15 + i * padding, 15);
+                    context.lineTo(15 + i * padding, count * padding - 15);
+                    context.stroke();
+                    context.moveTo(15, 15 + i * padding);
+                    context.lineTo(count * padding - 15, 15 + i * padding);
+                    context.stroke();
+                }
+            }
+            // 初始棋盘矩阵
+            initChessboardMatrix() {
+                const { options } = this;
+                const checkerboard = [];
+                for (let x = 0; x < options.gobangStyle.count; x++) {
+                    checkerboard[x] = [];
+                    for (let y = 0; y < options.gobangStyle.count; y++) {
+                        checkerboard[x][y] = 0;
+                    }
+                }
+                this.checkerboard = checkerboard;
+            }
+            // 判断下输赢
+            // checkReferee(x, y, role) {
+            //     if ((x == undefined) || (y == undefined) || (role == undefined)) return;
+            //     // 连杀的分数
+            //     let countContinuous = 0;
+            //     const XContinuous = this.checkerboard.map(x => x[y]);
+            //     const YContinuous = this.checkerboard[x];
+            //     const S1Continuous = [];
+            //     const S2Continuous = [];
+            //     this.checkerboard.forEach((_y, i) => {
+            //         // 左斜线
+            //         const S1Item = _y[y - (x - i)];
+            //         if (S1Item !== undefined) {
+            //             S1Continuous.push(S1Item);
+            //         }
+            //         // 右斜线
+            //         const S2Item = _y[y + (x - i)];
+            //         if (S2Item !== undefined) {
+            //             S2Continuous.push(S2Item);
+            //         }
+            //     });
+            //     // 当前落棋点所在的X轴/Y轴/交叉斜轴，只要有能连起来的5个子的角色即有胜者
+            //     [XContinuous, YContinuous, S1Continuous, S2Continuous].forEach(axis => {
+            //         if (axis.some((x, i) => axis[i] !== 0 &&
+            //             axis[i - 2] === axis[i - 1] &&
+            //             axis[i - 1] === axis[i] &&
+            //             axis[i] === axis[i + 1] &&
+            //             axis[i + 1] === axis[i + 2])) {
+            //             countContinuous++
+            //         }
+            //     });
+            //     // 如果赢了就给出提示
+            //     if (countContinuous) {
+            //         this.win = true;
+            //         let msg = (role == 1 ? '黑' : '白') + '子胜利✌️';
+            //         // 提示信息
+            //         this.result.innerText = msg;
+            //         // 不允许再操作
+            //         this.chessboard.onclick = null;
+            //     }
+
+            // }
+            // 刻画棋子
+            drawChessman(x, y, isBlack) {
+                const context = this.chessboard.getContext('2d');
+                context.beginPath();
+                context.arc(15 + x * 30, 15 + y * 30, 13, 0, 2 * Math.PI);// 画圆
+                context.closePath();
+                //渐变
+                var gradient = context.createRadialGradient(15 + x * 30 + 2, 15 + y * 30 - 2, 13, 15 + x * 30 + 2, 15 + y * 30 - 2, 0);
+                console.log(isBlack)
+                if (isBlack=="1") { // 黑子
+                    gradient.addColorStop(0, '#0a0a0a');
+                    gradient.addColorStop(1, '#636766');
+                } else { // 白子
+                    gradient.addColorStop(0, '#d1d1d1');
+                    gradient.addColorStop(1, '#f9f9f9');
+                }
+                context.fillStyle = gradient;
+                context.fill();
+                // 每次落子完成后都要判断下输赢
+                // setTimeout(() => {
+                //     this.checkReferee(x, y, isBlack ? 1 : 2);
+                // }, 0);
+            }
+            // 落子
+            listenDownChessman() {
+                //接收消息
+                socket.addEventListener('message', function (ct) {
+                    var cnt = JSON.parse(ct.data);
+                    if (cnt.type == "moved") {
+
+                        var xy = cnt.content.split(",")
+                        var x = Number(xy[0])
+                        var y = Number(xy[1])
+
+                        
+                        // 空的位置才可以落子
+                        if (gobangGame.checkerboard[x][y] != undefined && Object.is(gobangGame.checkerboard[x][y], 0)) {
+                        // 落子后更新矩阵,切换角色，并且记录
+                        gobangGame.checkerboard[x][y] = gobangGame.role;
+                        // 刻画棋子
+                        gobangGame.drawChessman(x, y, cnt.user);
+                        // 落子完之后有可能悔棋之后落子，这种情况下应该重置历史记录
+                        gobangGame.history.length = gobangGame.currentStep;
+                        gobangGame.history.push({
+                            x,
+                            y,
+                            role: Number(cnt.user)
+                        });
+                        // 保存坐标，切换角色和保存快照
+                        gobangGame.currentStep++;
+                        //this.role = Object.is(this.role , 1) ? 2 : 1;
+                    }
+                    }
+                });
+                // console.log(bool)
+                // if (bool) {
+                    
+                // }
+                // bool = false
+                this.chessboard.onclick = event => {
+                    // 获取棋子的位置(x,y) => (0,1)
+                    var {
+                        offsetX: x,
+                        offsetY: y
+                    } = event;
+                    x = Math.round((x - 15) / this.lattice.width);
+                    y = Math.round((y - 15) / this.lattice.height);
+                    console.log(x, y)
+                    var data = {
+                        "user": NowPlayer,
+                        "type": 'move',
+                        "content": x + "," + y,
+                        "room_id": keyword.room_id
+                    };
+                    socket.send(JSON.stringify(data));
+                    socket.addEventListener('message', function (ct) {
+                        var cnt = JSON.parse(ct.data);
+                        if (cnt.type == "moved") {
+                        //     // 空的位置才可以落子
+                            
+                        // if (gobangGame.checkerboard[x][y] !== undefined && Object.is(gobangGame.checkerboard[x][y], 0)) {
+                        //     // 落子后更新矩阵,切换角色，并且记录
+                        //     gobangGame.checkerboard[x][y] = gobangGame.role;
+                        //     // 刻画棋子
+                        //     gobangGame.drawChessman(x, y, Object.is(gobangGame.role, 1));
+                        //     // 落子完之后有可能悔棋之后落子，这种情况下应该重置历史记录
+                        //     gobangGame.history.length = gobangGame.currentStep;
+                        //     gobangGame.history.push({
+                        //         x,
+                        //         y,
+                        //         role: Number(cnt.user)
+                        //     });
+                        //     // 保存坐标，切换角色和保存快照
+                        //     gobangGame.currentStep++;
+                        //     //this.role = Object.is(this.role , 1) ? 2 : 1;
+                        // }
+                        }
+                        
+                        
+                    });
+                    
+                }
+            }
+            // 悔棋
+            regretChess() {
+                // 找到最后一次记录，回滚到UI，更新矩阵
+                if (this.history.length && !this.win) {
+                    const prev = this.history[this.currentStep - 1];
+                    if (prev) {
+                        const {
+                            x,
+                            y,
+                            role
+                        } = prev;
+                        // 销毁棋子
+                        this.minusStep(x, y);
+                        this.checkerboard[prev.x][prev.y] = 0
+                        this.currentStep--
+                        this.role = Object.is(this.role, 1) ? 2 : 1
+                    }
+                }
+            }
+            // 撤销悔棋
+            revokedRegretChess() {
+                const next = this.history[this.currentStep]
+                if (next) {
+                    this.drawChessman(next.x, next.y, next.role === 1)
+                    this.checkerboard[next.x][next.y] = next.role
+                    this.currentStep++
+                    this.role = Object.is(this.role, 1) ? 2 : 1
+                }
+            }
+            // 销毁棋子
+            minusStep(x, y) {
+                let { options } = this;
+                const { count } = options.gobangStyle;
+                const context = this.chessboard.getContext('2d');
+                context.clearRect(x * 30, y * 30, 30, 30);
+                // 重画该圆周围的格子,对边角的格式进行特殊的处理
+                if (x <= 0 && y <= 0) {
+                    this.fixchessboard(15, 15, 15, 30, 15, 15, 30, 15);
+                } else if (x >= count - 1 && y <= 0) {
+                    this.fixchessboard(count * 30 - 15, 15, count * 30 - 30, 15, count * 30 - 15, 15, count * 30 - 15, 30);
+                } else if (y >= count - 1 && x <= 0) {
+                    this.fixchessboard(15, count * 30 - 15, 15, count * 30 - 30, 15, count * 30 - 15, 30, count * 30 - 15);
+                } else if (x >= count - 1 && y >= count - 1) {
+                    this.fixchessboard(count * 30 - 15, count * 30 - 15, count * 30 - 30, count * 30 - 15, count * 30 - 15, count * 30 - 15, count * 30 - 15, count * 30 - 30);
+                } else if (x <= 0 && y > 0 && y < count - 1) {
+                    this.fixchessboard(15, 30 * y + 15, 30, 30 * y + 15, 15, 30 * y, 15, 30 * y + 30);
+                } else if (y <= 0 && x > 0 && x < count - 1) {
+                    this.fixchessboard(x * 30 + 15, 15, x * 30 + 15, 30, x * 30, 15, x * 30 + 30, 15);
+                } else if (x >= count - 1 && y > 0 && y < count - 1) {
+                    this.fixchessboard(count * 30 - 15, y * 30 + 15, count * 30 - 30, y * 30 + 15, count * 30 - 15, y * 30, count * 30 - 15, y * 30 + 30);
+                } else if (y >= count - 1 && x > 0 && x < count - 1) {
+                    this.fixchessboard(x * 30 + 15, count * 30 - 15, x * 30 + 15, count * 30 - 30, x * 30, count * 30 - 15, x * 30 + 30, count * 30 - 15);
+                } else {
+                    this.fixchessboard(15 + x * 30, y * 30, 15 + x * 30, y * 30 + 30, x * 30, y * 30 + 15, (x + 1) * 30, y * 30 + 15)
+                }
+
+            }
+            // 修补删除后的棋盘
+            fixchessboard(a, b, c, d, e, f, g, h) {
+                const context = this.chessboard.getContext('2d');
+                context.beginPath();
+                context.lineWidth = 2;
+                context.moveTo(a, b);
+                context.lineTo(c, d);
+                context.moveTo(e, f);
+                context.lineTo(g, h);
+                context.stroke();
+            }
+        }
+
+        // 实例化游戏
+        var gobangGame = new Gobang({
+            canvas: 'chess', // 画布的id
+            role: NowPlayer, // 角色 1黑色棋子 2白色棋子 ，这里是白色棋子先下
+            gobangStyle: {
+                // padding不允许改变哦
+                padding: 30, // 边和边之间的距离 ,不可修改，这里没考虑到边距的问题
+                count: 30, // 正方体的边数
+                borderColor: '#bfbfbf' // 描边的颜色
+            }
+        });
+
+        // 悔棋
+        let goback = document.getElementById("goback");
+        goback.onclick = () => {
+            gobangGame.regretChess();
+        }
+
+
+        // 撤销悔棋
+        let regret = document.getElementById('regret');
+        regret.onclick = () => {
+            gobangGame.revokedRegretChess();
+        }
+
+        // 重新开始
+        let restart = document.getElementById("restart");
+        restart.onclick = () => {
+            gobangGame.init();
+        }
+    </script>
+</body>
+
+</html>

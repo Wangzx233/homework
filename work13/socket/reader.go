@@ -24,6 +24,7 @@ func (c *Client) Reader() {
 		//fmt.Printf("%v",msg)
 		switch msg.Type {
 		case "login":
+
 			m:=make(map[string]chan Message)
 			m[msg.User] = c.MsgChan
 			Mng.Chans[msg.RoomID]=mapAppend(m,Mng.Chans[msg.RoomID])

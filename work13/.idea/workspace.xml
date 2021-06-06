@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="99494a0e-a733-4403-999f-559b85078c8f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/socket/hub.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../rpc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../rpc/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../winter" beforeDir="false" afterPath="$PROJECT_DIR$/../winter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/socket/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/socket/reader.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocket_front/room.html" beforeDir="false" afterPath="$PROJECT_DIR$/websocket_front/room.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +41,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/struct" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../examination" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -60,39 +60,39 @@
       <recent name="D:\GoProjects\src\demo\socket" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager" selected="Go Build.go build demo">
     <configuration name="go build demo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/demo.go" />
       <package value="demo" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/demo.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build demo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/demo.go" />
       <package value="demo" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/demo.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/main.go" />
       <package value="demo" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build demo" />
         <item itemvalue="Go Build.go build main.go" />
         <item itemvalue="Go Build.go build demo.go" />
-        <item itemvalue="Go Build.go build demo" />
       </list>
     </recent_temporary>
   </component>

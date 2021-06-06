@@ -1,4 +1,10 @@
+服务器地址：http://47.106.170.23/
 
+
+
+https://github.com/Wangzx233/homework/tree/main/examination
+
+gihub始终进不去，盲push的，不是很确定有没有
 
 ## AIP接口:
 
